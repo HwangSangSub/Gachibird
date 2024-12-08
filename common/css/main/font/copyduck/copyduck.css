@@ -1,0 +1,10 @@
+@font-face {
+	font-family: 'copyduck';
+	font-weight: 800;
+	font-display: swap;
+	src: local('copyduck'), url('./Copyduck.ttf') format('opentype');
+}
+
+:root {
+	--font-family-copyduck: "copyduck", Helvetica;
+}

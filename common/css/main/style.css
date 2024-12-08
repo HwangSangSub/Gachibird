@@ -1,0 +1,452 @@
+@charset "UTF-8";
+
+:root{
+    /* 기본 색상 */
+    --white-000:#FFFFFF;
+    --white-005:#d4d4d4;
+    --gray-0000:#606060;
+    --gray-0001:#474747;
+    --gray-0002:#707070;
+    --black-0000: #000000;
+    --black-1111: #111111;
+
+    --text-color-gayA5 : #A5A4A5;
+
+    /* 특정 색상 */
+    --color-gnb:#A0B2BF;
+    --color-gnb-hover: #17669E;
+    --color-keyword-back: #F2F4F4;
+    --color-footer-hover: #336487;
+    
+    --color-gray-background: #f2f4f4;
+    --color-green-text: #2bbfaf;
+    --color-gray-text001: #b8c9dc;
+    --color-gray-line: #e8e8e8;
+
+    --color-black-text-343536: #343536;
+    --color-blue-text-458DC1: #458DC1;
+
+    --color-reco-blue:#5680B2;
+    --color-reco-gray: #717171;
+}
+
+/* 전체 설정 */
+html {
+    font-size: 10px;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+ul, ol{
+    list-style-type: none;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+}
+img{
+    vertical-align: bottom;
+    border: none;
+}
+body{
+    background-color: rgb(206, 238, 252);
+
+}
+
+
+/* 전체 레이아웃 설정 */
+.wrapper{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+.web_view{
+    position: fixed;
+    max-width:51rem;
+    height: 100%;
+    left: 50vw;
+    top: 0;
+    margin-left: -51rem;
+    background-color: rgb(206, 238, 252);
+}
+.mobile_view{
+    max-width: 43rem;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    left: 50vw;
+    top: 0;
+    border-left: 0.1rem solid var(--color-gray-line);
+    border-right: 0.1rem solid var(--color-gray-line);
+    /* background-color: var(--color-gray-background); */
+    background-color: var(--white-000);
+    overflow: auto;
+}
+/* 스크롤바 설정 ################ */
+.mobile_view::-webkit-scrollbar {
+    width: 1px; /* 스크롤바의 너비 */
+}
+.mobile_view::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0);  /* 스크롤바의 색상 */
+}
+.mobile_view::-webkit-scrollbar-track {
+    background-color: transparent; /*스크롤바 뒷 배경 색상*/
+}
+
+
+/* 미디어쿼리 구간 ###############################*/
+@media (max-width: 1024px) {
+    .web_view{
+        display: none;
+    }
+    .mobile_view{
+        left: auto;
+        margin: auto;
+    }
+}
+/* ############################################## */
+/* web_view 설정 */
+.logo{
+
+}
+.logo img{
+    height: 5rem;
+    width: auto;
+}
+.web_text{
+    font-family: var(--font-family-pretendard-medium);
+    font-size: 3.8rem;
+    line-height: 4.8rem;
+    letter-spacing: -0.114rem;
+    color: var(--gray-0002);
+}
+.web_text span{
+    font-family: var(--font-family-pretendard-bold);
+}
+
+
+/* ############################################## */
+/* mobile_view 설정 */
+.mobile_header{
+    z-index: 999;
+    min-height: 8.5rem;
+    position: sticky;
+    top: env(safe-area-inset-top);
+    background-color: var(--white-000);
+
+    display: flex;
+    align-items: top;
+    justify-content: space-between;
+    padding: 0 2rem 2rem 2rem;
+}
+.header_title{
+    font-family: var(--font-family-pretendard-semibold);
+    font-size: 2.1rem;
+    margin-top: 3rem;
+    box-sizing: border-box;
+}
+.mobile_header>div{
+    margin-top: 3rem;
+}
+.header_option{
+    display: flex;
+}
+.header_option li{
+    margin: 0 0.6rem;
+}
+.header_option img{
+    width: 2.2rem;
+    height: auto;
+}
+.header_logo{
+    float: right;
+}
+.header_logo img{
+    width: 7.5rem;
+    height: auto;
+    margin-top: 1rem;
+    margin-right: 0.5rem;
+}
+/* mybird_gnb */
+.mybird_gnb{
+    display: none;
+    z-index: 999;
+    position: sticky;
+    top: calc(env(safe-area-inset-top) + 8.5rem);
+    min-height: 4.5rem;
+    background-color: var(--white-000);
+}
+.header_gnb{
+    display: flex;
+    position: absolute;
+    bottom: 0.8rem;
+    left: 0;
+    margin-left: 2.5rem;
+}
+.header_gnb li{
+    font-family: var(--font-family-pretendard-medium);
+    font-size: 1.8rem;
+    color: var(--text-color-gayA5);
+    cursor: pointer;
+    margin-right: 2rem;
+}
+.header_gnb li:hover{
+    color: var(--black-1111);
+}
+
+.header_gnb .selected{
+    color: var(--black-1111);
+}
+.gnb_line{
+    position: absolute;
+    bottom: 0;
+    height: 0.36rem;
+    background-color: black;
+    transition: all 0.3s ease-out; 
+    border-top-left-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
+}
+.is-dragging {
+	pointer-events: none;
+}
+
+/* footer 설정 */
+.under_menu{
+    position: fixed;
+    bottom: 0;
+
+    height: 10rem;
+    width: 100%;
+    max-width: 43rem;
+    background-color: var(--white-000);
+    border-top: solid 0.2rem var(--color-gray-line);
+    display: flex;
+    align-items: center;
+}
+.under_menu ul{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.under_menu li{
+    font-family: var(--font-family-pretendard-regular);
+    font-size: 1.7rem;
+    color: var(--color-gray-text001);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.under_menu img{
+    width: 3.8rem;
+    height: auto;
+    margin-bottom: 0.8rem;
+}
+.under_menu_img img:nth-child(2){
+    display: none;
+}
+
+.under_menu .on p{color: var(--color-footer-hover);}
+.on .under_menu_img img:nth-child(1){display: none;}
+.on .under_menu_img img:nth-child(2){display: block;}
+
+/* main01 - 마이버드 설정 ######################################################################### */
+.main_mybird{
+    position: relative;
+    background-color: var(--color-gray-background);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 12rem;
+}
+.mybird_card{
+    height: 26rem;
+    width: 88%;
+    background-color: var(--white-000);
+    border-radius: 2.5rem;
+    margin-top: 2.5rem;
+    box-sizing: border-box;
+    padding: 1.5rem;
+    box-shadow: 0.2rem 0.2rem 0.4rem rgba(155, 155, 155, 0.1);
+}
+.mybird_news{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 14rem;
+}
+.mybird_news_img{
+    width: 45%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 2.5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mybird_news_img img{
+    width: auto;
+    height: 100%;
+    border-radius: 2.5rem;
+}
+.mybird_title{
+    width: 55%;
+    box-sizing: border-box;
+    padding: 0.5rem 0.5rem 0 2rem;
+}
+.mybird_title p{
+    font-family: var(--font-family-pretendard-semibold);
+    font-size: 1.9rem;
+    line-height: 2.6rem;
+    margin-top: 1rem;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.mybird_title div{
+    font-size: 1.4rem;
+    letter-spacing: -0.034rem;
+    text-align: left;
+}
+.company{
+    font-family: var(--font-family-pretendard-light);
+    color: var(--text-color-gayA5);
+}
+.ago{
+    font-family: var(--font-family-pretendard-semibold);
+    color: var(--color-green-text);
+}
+.mybird_news_text{
+    font-family: var(--font-family-pretendard-light);
+    font-size: 1.35rem;
+    color: var(--text-color-gayA5);
+    letter-spacing: 0.034rem;
+    line-height: 2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    margin-top: 1rem;
+}
+.mybird_news_text p:nth-child(1){
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.mybird_news_text p:nth-child(2){
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis; 
+}
+
+
+/* main02 - 추천피드 설정 ######################################################################### */
+.main_recom{
+    display: block;
+    padding-bottom: 10rem;
+}
+.recom_card{
+    width: 100%;
+    height: 20rem;
+}
+.recom_title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    width: 100%;
+    height: 4.5rem;
+    box-sizing: border-box;
+    padding: 0 2rem;
+    background-color: var(--white-000);
+}
+.rec_keyword{
+    font-family: var(--font-family-pretendard-bold);
+    font-size: 2rem;
+    color: var(--black-0000);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+.add_btn{
+    font-family: var(--font-family-pretendard-regular);
+    font-size: 1.6rem;
+    color: var(--color-blue-text-458DC1);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.add_btn span{
+    margin: 0 0.9rem 0 0.5rem;
+}
+.add_btn img:nth-child(1){width: 2.1rem; height: auto;}
+.add_btn img:nth-child(3){width: 0.6rem; height: auto;}
+
+.recom_content{
+    display: flex;
+    width: 100%;
+    height: 15.5rem;
+}
+.rec_img{
+    width: 33%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.rec_img img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.rec_list{
+    width: 67%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-gray-background);
+}
+.rec_list ul{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.rec_list li{
+    font-family: var(--font-family-pretendard-regular);
+    font-size: 1.6rem;
+    color: var(--color-black-text-343536);
+    background-color: var(--white-000);
+
+    box-sizing: border-box;
+    padding: 0.3em 1.5rem;
+    margin: 0.8rem 0;
+    border-radius: 1rem;
+    text-align: center;
+    width: 88%;
+   
+    cursor: pointer;
+    overflow: hidden; /* 영역 넘어가면 안보이게 */
+    white-space: nowrap;  /* 글이 길어져도 한줄로 유지 */
+    text-overflow: ellipsis;  /* 넘어가는 부분 부터 ...으로 보이게 하기 */
+}
+
+
+
+/* main03 - 마이키워드 설정 ###################################################################### */
+.main_mykey{
+    width: 100%;
+    height: 100vh;
+    background-color: #bebebe;
+    text-align: center;
+}
+.main_mykey p{
+    font-family: var(--font-family-pretendard-semibold);
+    font-size: 3rem;
+}

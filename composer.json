@@ -1,0 +1,16 @@
+{
+    "name": "gachi/bird",
+    "authors": [
+        {
+            "name": "gachi",
+            "email": "gachita@gachita.kr"
+        }
+    ],
+    "require": {
+        "grpc/grpc": "^1.38",
+        "google/cloud-firestore": "^0.15",
+        "google/apiclient": "^2.12.1",
+        "google/cloud-core": "^1.47",
+        "phpoffice/phpspreadsheet": "^1.19"
+    }
+}

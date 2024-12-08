@@ -1,0 +1,508 @@
+@charset "UTF-8";
+
+:root {
+    --white-color-000: #ffffff;
+    --main-color-blue:#326CF9;
+    --blue-color-hover: #4D76C9;
+
+    --gnb-color-gray: #5F6975;
+    --title-color-black: #484E55;
+
+    --gary-color-5F6975: #5F6975;
+    --gray-color-818387: #818387;
+    --gray-color-BCBCBC99: #BCBCBC99;
+    --gray-color-646464: #646464;
+}
+
+/* 전체설정 */
+*{
+    margin: 0;
+    padding: 0;
+    /* 클릭시 파란 반응 삭제 */
+    -webkit-tap-highlight-color: transparent;
+}
+ul, ol{
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+}
+img{
+    vertical-align: none;
+    border: none;
+}
+
+
+/* 스크롤 설정 */
+body::-webkit-scrollbar {
+    width: 12px; /* 스크롤바의 너비 */
+}
+body::-webkit-scrollbar-thumb {
+    background: #3C4F5A; /* 스크롤바의 색상 */
+    background-clip: padding-box;
+    border: 2px solid #F8F9F9;
+    border-radius: 50px;
+}
+body::-webkit-scrollbar-track {
+    /*스크롤바 뒷 배경 색상*/
+    background-color: transparent;
+}
+
+
+/* header 설정 ############################################################################### */
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    z-index: 9999;
+    background-color: #FFFFFFB3;
+    border-bottom: 0.5px solid var(--gray-color-BCBCBC99);
+}
+.menu{
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+header h1{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    height: 100%;
+    width: 10%;
+    z-index: 999;
+}
+header h1 a{
+    display: flex;
+    align-items: center;
+}
+header h1 img{
+    height: auto;
+    width: 80px;
+}
+nav{
+    height: 100%;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+nav ul{
+    display: flex;
+    align-items: center;
+    margin-right: 16px;
+}
+nav ul li{
+    margin: 0 16px;
+}
+nav ul li a{
+    font-family: 'pretendard';
+    font-size: 14px;
+    color: var(--white-color-nav);
+}
+nav ul li a:hover{
+    color: #5C657B;
+}
+
+.down_icon{
+    display: flex;
+    align-items: center;
+    width: 274px;
+    height: auto;
+}
+.down_icon>div{
+    width: 124px;
+    height: auto;
+}
+.down_icon>div a{
+    display: flex;
+    align-items: center;
+}
+
+.down_icon img{
+    width: 100%;
+    height: auto;
+}
+.down_icon div:nth-child(1){
+    margin-right: 26px;
+}
+
+.menu_btn{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+}
+.menu_btn img{
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+.menu_btn img.on{
+    display: block;
+}
+
+    /* 서브 메뉴 설정 */
+.sub_menu{
+    display: none;
+    width: 100%;
+    height: 260px;
+}
+.sub_menu ul{
+    width: 100%;
+    height: 100%;
+}
+.sub_menu li{
+    display: flex;
+    align-items: center;
+    height: 25%;
+    width: 100%;
+    cursor: pointer;
+    background-color: #ffffffee;
+}
+.sub_menu a li{
+    padding-left: 30px;
+    font-family: var(--font-family-pretendard-regular);
+    font-size: 12px;
+    color: #2B3E48;
+}
+.sub_menu a:hover li{
+    color: var(--blue-color-hover);
+}
+
+
+
+
+/* q_title 설정 ############################################################################### */
+.q_title{
+    font-family: var(--font-family-pretendard-semibold);
+    color: var(--title-color-black);
+    font-size: 42px;
+    letter-spacing: -1.05px;
+    line-height: 48px;
+    text-align: center;
+    padding-top: 127px;
+}
+
+/* gnb 설정 */
+.gnb{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 66px;
+}
+.gnb li{
+    font-family: var(--font-family-pretendard-bold);
+    color: var(--gnb-color-gray);
+    font-size: 18px;
+    letter-spacing: -0.54px;
+    line-height: 48px;
+    cursor: pointer;
+}
+.gnb li:hover{
+    color: var(--main-color-blue);
+}
+.gnb li.blue{
+    color: var(--main-color-blue);
+}
+
+
+/* question 설정 ############################################################################### */
+.question{
+    width: 553px;
+    margin: 0 auto;
+    margin-top: 129px;
+}
+.question>div{
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+.question>div.blc{
+    display: block;
+}
+
+.que_box{
+    background-color: var(--white-color-000);
+    height: 80px;
+    width: 100%;
+    margin: 15px 0;
+    cursor: pointer;
+}
+.que_title{
+    width: 100%;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.que_title p{
+    font-family: var(--font-family-pretendard-medium);
+    color: var(--gary-color-5F6975);
+    font-size: 18px;
+    letter-spacing: -0.9px;
+    line-height: 28px;
+    margin-left: 32px;
+}
+.que_title img{
+    cursor: pointer;
+    margin-right: 32px;
+}
+
+.minus{
+    display: none;
+}
+
+.que_text{
+    padding: 20px 32px 32px 32px;
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+}
+.que_text p{
+    font-family: var(--font-family-pretendard-regular);
+    color: var(--gray-color-818387);
+    font-size: 17px;
+    letter-spacing: -0.85px;
+    line-height: 28px;
+}
+
+.que_box.active{
+    background-color: #EFF7FF;
+    border-radius: 15px;
+    height: auto;
+}
+.que_box.active .que_text{
+    visibility: visible;
+    opacity: 1; 
+    height: auto;
+}
+
+
+/* footer 설정 ############################################################################### */
+footer{
+    border-top: solid 0.5px var(--gray-color-BCBCBC99);
+    width: 100%;
+    height: 343px;
+    margin-top: 5%;
+}
+footer section{
+    display: flex;
+}
+footer section article{
+    width: 50%;
+    height: 100%;
+}
+    /* footer 좌측 */
+.footer_txt{
+    background-color: var(--black-color-footer);
+    display: flex;
+    justify-content: center;
+}
+.footer_txt>div{
+    margin-top: 15%;
+}
+.footer_txt p{
+    font-family: var(--font-family-pretendard-semibold);
+    font-size: 11px;
+    color: var(--gray-color-646464);
+    letter-spacing: -0.33px;
+}
+.footer_txt p:nth-child(1){
+    margin-bottom: 16px;
+}
+.footer_txt p:nth-child(2){
+    font-family: var(--font-family-pretendard-light);
+    color: var(--gray-color-646464);
+    line-height: 20px;
+}
+.footer_txt p span{
+    margin-right: 10px;
+}
+.sns{
+    display: flex;
+}
+.sns div{
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    margin-top: 30px;
+}
+.sns div:nth-child(1){
+    margin-right: 6px;
+}
+.sns img{
+    width: 100%;
+    height: auto;
+}
+    /* footer 우측 */
+.footer_list{
+    display: flex;
+    justify-content: center;
+}
+.footer_list ul{
+    margin-top: 15%;
+    text-align: left;
+    font-size: 11px;
+    letter-spacing: -0.33px;
+}
+.footer_list ul:nth-child(1){
+    margin-right: 48px;
+}
+.footer_list li{
+    font-family: var(--font-family-pretendard-semibold);
+    color: var(--gray-color-646464);
+    margin-bottom: 16px;
+}
+.footer_list li a{
+    font-family: var(--font-family-pretendard-light);
+    color: var(--gray-color-646464);
+}
+
+
+
+
+
+/* 미디어쿼리구간 ######################################################################################################################################################################################################*/
+
+/* 웹구간 - 800px 이하일때 ############################################################################################################################# */
+@media (max-width:800px){
+
+    /* 전체설정 ################################## */
+    .width_770{
+        width: 90%;
+        margin: 0 auto;
+     }
+     .main_780{
+         width: 100%;
+         margin: 0 auto;
+     }
+    
+    /* header 설정 ############################### */
+    header{
+        height: 50px;
+    }
+    .menu{
+        width: 90%;
+        margin: 0 5%;
+    }
+    header h1 img{
+        width: 45px;
+    }
+    
+    .down_icon{
+        display: flex;
+        align-items: center;
+        width: 170px;
+        height: 100%;
+    }
+    .down_icon>div{
+        width: 80px;
+        height: auto;
+    }
+    .down_icon img{
+        width: 100%;
+        height: auto;
+    }
+    .down_icon div:nth-child(1){
+        margin-right: 10px;
+    }
+    /* %%%%%%%%%%%%%%%%%%%% */
+    nav ul{
+        display: none;
+    }
+    .menu_btn{
+        display: flex;
+        margin-left: 15px;
+    }    
+    .menu_btn img{
+        filter : invert(100%) sepia(100%) saturate(0%) hue-rotate(170deg) brightness(103%) contrast(107%)
+    }
+
+    /* q_title 설정 #################################### */
+    .q_title{
+        font-size: 32px;
+    }
+    /* gnb 설정 */
+    .gnb{
+        justify-content: space-around;
+        margin-top: 60px;
+    }
+    .gnb li{
+        font-size: 12px;
+    }
+
+    /* question 설정 ################################# */
+    .question{
+        width: 100%;
+        margin-top: 50px;
+    }
+    .que_title p{
+        font-size: 15px;
+        margin-left: 24px;
+    }
+    .que_title img{
+        margin-right: 24px;
+    }
+    .que_text{
+        padding: 24px;
+    }
+    .que_text p{
+        font-size: 14px;
+    }
+
+    /* footer 설정 ##################################### */
+    footer{
+        height: 500px;
+    }
+    footer section{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    footer section article{
+        width: 100%;sub_menu
+        height: 50%;
+    }
+        /* footer 좌측 */
+    .footer_txt{
+        display: flex;
+        justify-content: left;
+        align-items: baseline;
+    }
+    .footer_txt>div{
+        margin-top: 1%;
+        margin-left: 10%;
+    }
+        /* footer 우측 */
+    .footer_list{
+        justify-content: end;
+        align-items: left;
+        flex-direction: column;
+        margin-top: 10%;
+    }
+    .footer_list ul{
+        margin-top: 0%;
+        margin-left: 10%;
+    }
+    
+}
+
+
+/* 웹구간 - 801px 이상일때 ############################################################################################################################# */
+@media (min-width:801px){    
+    /* 전체설정 */
+    .width_770{
+       width: 770px;
+       margin: 0 auto;
+    }
+    .menu{
+        width: 872px;
+        margin: 0 auto;
+    }
+    .main_780{
+        width: 780px;
+        margin: 0 auto;
+    }
+}

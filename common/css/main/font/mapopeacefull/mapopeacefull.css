@@ -1,0 +1,46 @@
+@font-face {
+	font-family: 'MapoPeace-Light';
+	font-weight: 200;
+	font-display: swap;
+	src: local('MapoPeacefull'), url('./otf/MapoPeacefull.otf') format('opentype');
+}
+@font-face {
+	font-family: 'MapoPeace-Regular';
+	font-weight: 400;
+	font-display: swap;
+	src: local('MapoPeacefull'), url('./otf/MapoPeacefull.otf') format('opentype');
+}
+@font-face {
+	font-family: 'MapoPeace-Medium';
+	font-weight: 500;
+	font-display: swap;
+	src: local('MapoPeacefull'), url('./otf/MapoPeacefull.otf') format('opentype');
+}
+@font-face {
+	font-family: 'MapoPeace-Semi-Bold ';
+	font-weight: 600;
+	font-display: swap;
+	src: local('MapoPeacefull'), url('./otf/MapoPeacefull.otf') format('opentype');
+}
+@font-face {
+	font-family: 'MapoPeace-Bold';
+	font-weight: 700;
+	font-display: swap;
+	src: local('MapoPeacefull'), url('./otf/MapoPeacefull.otf') format('opentype');
+}
+@font-face {
+	font-family: 'MapoPeace-Extra-Bold';
+	font-weight: 800;
+	font-display: swap;
+	src: local('MapoPeacefull'), url('./otf/MapoPeacefull.otf') format('opentype');
+}
+
+
+:root {
+	--font-family-MapoPeace-Light: "MapoPeace-Light";
+	--font-family-MapoPeace-Regular: "MapoPeace-Regular";
+	--font-family-MapoPeace-Medium: "MapoPeace-Medium";
+	--font-family-MapoPeace-Semi-Bold : "MapoPeace-Semi-Bold";
+	--font-family-MapoPeace-Bold: "MapoPeace-Bold";
+	--font-family-MapoPeace-Extra-Bold: "MapoPeace-Extra-Bold";
+}
